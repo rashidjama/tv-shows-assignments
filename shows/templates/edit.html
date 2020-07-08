@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TV SHOWS</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+</head>
+<body>
+  <div class="container bg-dark p-3 text-white">
+    <h1>Edit Show {{show.id}}</h1>
+    <form action="/{{show.id}}/update" method="POST" class="form-group">
+    {% csrf_token %}
+    <label for="tl">Title</label>
+    <input type="text" name="title" id="tl" value="{{show.title}}" class="form-control">
+    <label for="nt">Net Work</label>
+    <input type="text" name="network" id="nt" value="{{show.newwork}}" class="form-control">
+    <label for="rd">Release Date</label>
+    <input type="date" name="r_date" id="rd" class="form-control">
+    <label for="ds">Description</label>
+    <textarea name="des" id="ds" class="form-control" placeholder="{{show.description}}"></textarea>
+    <button class="btn btn-outline-success mt-4 text-white">Update</button><a href="/" class="btn btn-outline-success text-white mt-4 ml-5">Go Back</a>
+    </form>
+  </div>
+</body>
+</html>

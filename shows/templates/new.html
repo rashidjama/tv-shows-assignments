@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TV SHOWS</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+</head>
+<body>
+  <div class="container">
+    <h1>Add a New Show</h1>
+    <form action="/create" method="POST" class="form-group">
+      {% csrf_token %}
+      <label for="tl">Title</label>
+      <input type="text" name="title" id="tl" class="form-control">
+      <label for="nt" class="mt-2">Net Work</label>
+      <input type="text" name="network" id="nt" class="form-control">
+      <label for="rl" class="mt-2">Release Date</label>
+      <input type="date" name="r_date" id="rl" class="form-control">
+      <label for="ds" class="mt-2">Description</label>
+      <textarea name="des" id="ds" class="form-control"></textarea>
+      <button class="btn btn-outline-secondary mt-2">Create</button>
+      <a href="/" class="btn btn-primary mt-2">Go Back</a>
+    </form>
+  </div>
+</body>
+</html>

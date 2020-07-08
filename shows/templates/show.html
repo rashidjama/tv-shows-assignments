@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TV SHOWS</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+</head>
+<body>
+  <div class="container border p-3">
+    <h1>Tv Show {{show.id}}</h1>
+    <p class="lead">Title: {{show.title}}</p>
+    <p class="lead">Net Work: {{show.newwork}}</p>
+    <p class="lead">Released Date: {{show.released|date:"SHORT_DATE_FORMAT"}}</p>
+    <p class="lead">Description: {{show.description}}</p>
+    <p class="mt-5">Last updated: {{show.updated_at}}</p>
+    <a href="{% url 'edit' show.id %}">Edit</a> | <a href="{% url 'delete' show.id%}"  class="text-danger">Delete</a> | <a href="/">Go Back</a>
+  </div>
+</body>
+</html>

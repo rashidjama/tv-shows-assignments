@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TV SHOWS</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+</head>
+<body>
+  <div class="container">
+    <h1>All Shows</h1>
+    <table class="table table-dark">
+      <thead>
+        <th>ID</th>
+        <th>Title</th>
+        <th>Net Work</th>
+        <th>Released Date</th>
+        <th>Actions</th>
+      </thead>
+      <tbody>
+          {% for show in shows %}
+          <tr>
+            <td>{{show.id}}</td>
+            <td>{{show.title}}</td>
+            <td>{{show.newwork}}</td>
+            <td>{{show.released|date:"SHORT_DATE_FORMAT"}}</td>
+            <td><a href="{% url 'show' show.id%}">Show</a> | <a href="{% url 'edit' show.id %}">Edit</a> | <a href="{% url 'delete' show.id%}">Delete</a></td>
+          </tr>
+          {% endfor %}
+      </tbody>
+    </table>
+    <a href="/new">Add New Show</a>
+  </div>
+</body>
+</html>
